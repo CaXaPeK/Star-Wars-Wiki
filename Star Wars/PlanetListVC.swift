@@ -11,7 +11,7 @@ class PlanetListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Planets"
+        title = "Planetstest"
         // Do any additional setup after loading the view.
     }
     
