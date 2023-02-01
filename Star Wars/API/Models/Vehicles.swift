@@ -13,10 +13,12 @@ struct VehicleList {
 }
 
 struct Vehicle {
-    let name, model, manufacturer, costInCredits: String?
-    let length, maxAtmospheringSpeed, crew, passengers: String?
-    let cargoCapacity, consumables, vehicleClass: String?
+    let name, model, manufacturer, cost_in_credits: String?
+    let length, max_atmosphering_speed, crew, passengers: String?
+    let cargo_capacity, consumables, vehicle_class: String?
     let pilots, films: [String]?
     let created, edited: String?
     let url: String?
 }
+
+let defaultVehicle = Vehicle(name: nil, model: nil, manufacturer: nil, cost_in_credits: nil, length: nil, max_atmosphering_speed: nil, crew: nil, passengers: nil, cargo_capacity: nil, consumables: nil, vehicle_class: nil, pilots: nil, films: nil, created: nil, edited: nil, url: nil)

@@ -23,6 +23,8 @@
 		847A495529896CE9008F7BEB /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A495429896CE9008F7BEB /* Species.swift */; };
 		847A495729897599008F7BEB /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A495629897599008F7BEB /* Starships.swift */; };
 		847A4959298975C5008F7BEB /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A4958298975C5008F7BEB /* Vehicles.swift */; };
+		848DB1BE298A9F010058FC6B /* FilmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DB1BC298A9F010058FC6B /* FilmsTableViewCell.swift */; };
+		848DB1BF298A9F010058FC6B /* FilmsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DB1BD298A9F010058FC6B /* FilmsTableViewCell.xib */; };
 		84F859AE29864E1D00F63C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F859AD29864E1D00F63C09 /* AppDelegate.swift */; };
 		84F859B029864E1D00F63C09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F859AF29864E1D00F63C09 /* SceneDelegate.swift */; };
 		84F859B229864E1D00F63C09 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F859B129864E1D00F63C09 /* MainVC.swift */; };
@@ -68,6 +70,8 @@
 		847A495429896CE9008F7BEB /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		847A495629897599008F7BEB /* Starships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starships.swift; sourceTree = "<group>"; };
 		847A4958298975C5008F7BEB /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		848DB1BC298A9F010058FC6B /* FilmsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsTableViewCell.swift; sourceTree = "<group>"; };
+		848DB1BD298A9F010058FC6B /* FilmsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmsTableViewCell.xib; sourceTree = "<group>"; };
 		84F859AA29864E1D00F63C09 /* Star Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F859AD29864E1D00F63C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F859AF29864E1D00F63C09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		847A494A298960FC008F7BEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				848DB1BB298A9C030058FC6B /* Cells */,
 				84F859B129864E1D00F63C09 /* MainVC.swift */,
 				845797122986DA2B007D9A3E /* CategorySelectVC.swift */,
 				84532E7A2987A5EF002791B7 /* CharacterListVC.swift */,
@@ -145,6 +150,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		848DB1BB298A9C030058FC6B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				846FC565298A3A3E00EE629A /* PeopleTableViewCell.swift */,
+				846FC566298A3A3E00EE629A /* PeopleTableViewCell.xib */,
+				848DB1BC298A9F010058FC6B /* FilmsTableViewCell.swift */,
+				848DB1BD298A9F010058FC6B /* FilmsTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84F859A129864E1D00F63C09 = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +192,6 @@
 				84F859B629864E1F00F63C09 /* Assets.xcassets */,
 				84F859B829864E1F00F63C09 /* LaunchScreen.storyboard */,
 				84F859BB29864E1F00F63C09 /* Info.plist */,
-				846FC565298A3A3E00EE629A /* PeopleTableViewCell.swift */,
-				846FC566298A3A3E00EE629A /* PeopleTableViewCell.xib */,
 			);
 			path = "Star Wars";
 			sourceTree = "<group>";
@@ -311,6 +325,7 @@
 			files = (
 				84F859BA29864E1F00F63C09 /* LaunchScreen.storyboard in Resources */,
 				84F859B729864E1F00F63C09 /* Assets.xcassets in Resources */,
+				848DB1BF298A9F010058FC6B /* FilmsTableViewCell.xib in Resources */,
 				84F859B529864E1D00F63C09 /* Main.storyboard in Resources */,
 				846FC568298A3A3E00EE629A /* PeopleTableViewCell.xib in Resources */,
 			);
@@ -344,6 +359,7 @@
 				845797132986DA2B007D9A3E /* CategorySelectVC.swift in Sources */,
 				84532E832987AE1A002791B7 /* StarshipListVC.swift in Sources */,
 				84532E7B2987A5EF002791B7 /* CharacterListVC.swift in Sources */,
+				848DB1BE298A9F010058FC6B /* FilmsTableViewCell.swift in Sources */,
 				847A494E2989677B008F7BEB /* People.swift in Sources */,
 				84F859B229864E1D00F63C09 /* MainVC.swift in Sources */,
 				84F859AE29864E1D00F63C09 /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  PeopleTableViewCell.swift
+//  FilmsTableViewCell.swift
 //  Star Wars
 //
 //  Created by Admin on 01.02.2023.
@@ -7,12 +7,8 @@
 
 import UIKit
 
-class PeopleTableViewCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var PersonNameLabel: UILabel!
-    @IBOutlet weak var PersonBirthYearLabel: UILabel!
-    
+class FilmsTableViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,8 +20,4 @@ class PeopleTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with model: Person) {
-        PersonNameLabel.text = model.name
-        PersonBirthYearLabel.text = "Born: \(model.birth_year ?? "unknown")"
-    }
 }

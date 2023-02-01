@@ -15,11 +15,15 @@ struct SpecieList: Codable {
 struct Specie: Codable {
     let name, classification: String?
     let designation: String?
-    let averageHeight, skinColors, hairColors, eyeColors: String?
-    let averageLifespan: String?
+    let average_height, skin_colors, hair_colors, eye_colors: String?
+    let average_lifespan: String?
     let homeworld: String?
     let language: String?
     let people, films: [String]?
     let created, edited: String?
     let url: String?
 }
+
+let defaultSpecie = Specie(name: nil, classification: nil, designation: nil, average_height: nil, skin_colors: nil, hair_colors: nil, eye_colors: nil, average_lifespan: nil, homeworld: nil, language: nil, people: nil, films: nil, created: nil, edited: nil, url: nil)
+
+let defaultSpecieList = SpecieList(count: nil, next: nil, previous: nil, results: nil)

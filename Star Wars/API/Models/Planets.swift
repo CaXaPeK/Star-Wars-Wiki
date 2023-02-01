@@ -13,10 +13,14 @@ struct PlanetList: Codable {
 }
 
 struct Planet: Codable {
-    let name, rotationPeriod, orbitalPeriod, diameter: String?
-    let climate, gravity, terrain, surfaceWater: String?
+    let name, rotation_period, orbital_period, diameter: String?
+    let climate, gravity, terrain, surface_water: String?
     let population: String?
     let residents, films: [String]?
     let created, edited: String?
     let url: String?
 }
+
+let defaultPlanet = Planet(name: nil, rotation_period: nil, orbital_period: nil, diameter: nil, climate: nil, gravity: nil, terrain: nil, surface_water: nil, population: nil, residents: nil, films: nil, created: nil, edited: nil, url: nil)
+
+let defaultPlanetList = PlanetList(count: nil, next: nil, previous: nil, results: nil)

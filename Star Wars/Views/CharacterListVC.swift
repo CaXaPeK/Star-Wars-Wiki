@@ -17,7 +17,7 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var tableView: UITableView!
     private var list: PeopleList = defaultPeopleList
     private var pageID = 1
-    private var pageCount = 9
+    private var pageCount = 0
     
     func unhideButtons() {
         if pageID == pageCount {
@@ -89,6 +89,27 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             }
     }
     
+    func getImage(id: Int) -> UIImageView {
+        guard let url = URL(string: "https://starwars-visualguide.com/assets/img/characters/\(id).jpg") else { return UIImageView() }
+        var imageView: UIImageView = UIImageView()
+        
+        AF.request(url, method: .get)
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    imageView.image = UIImage(data: data) ?? UIImage()
+                    print(id)
+                    print(imageView.image)
+                case .failure(let error):
+                    print(error)
+                    print(url)
+                }
+            }
+        
+        return imageView
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.results?.count ?? 0
     }
@@ -97,7 +118,8 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleTableViewCell", for: indexPath) as? PeopleTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(with: list.results?[indexPath.row] ?? defaultPerson)
+        
+        cell.configure(with: list.results?[indexPath.row] ?? defaultPerson, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
         
         return cell
     }
