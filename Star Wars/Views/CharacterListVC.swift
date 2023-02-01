@@ -10,14 +10,59 @@ import Alamofire
 
 class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var PrevButton: UIButton!
+    @IBOutlet weak var NextButton: UIButton!
+    @IBOutlet weak var PageLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     private var list: PeopleList = defaultPeopleList
+    private var pageID = 1
+    private var pageCount = 9
+    
+    func unhideButtons() {
+        if pageID == pageCount {
+            NextButton.self.isHidden = true
+        }
+        else {
+            NextButton.self.isHidden = false
+        }
+        
+        if pageID == 1 {
+            PrevButton.self.isHidden = true
+        }
+        else {
+            PrevButton.self.isHidden = false
+        }
+    }
+    
+    @IBAction func NextPageButtonPress(_ sender: UIButton) {
+        pageID += 1
+        list = defaultPeopleList
+        tableView.reloadData()
+        PageLabel.self.isHidden = true
+        NextButton.self.isHidden = true
+        PrevButton.self.isHidden = true
+        ActivityIndicator.self.isHidden = false
+        getRequest(pageID: pageID)
+    }
+    
+    @IBAction func PrevPageButtonPress(_ sender: UIButton) {
+        pageID -= 1
+        list = defaultPeopleList
+        tableView.reloadData()
+        PageLabel.self.isHidden = true
+        NextButton.self.isHidden = true
+        PrevButton.self.isHidden = true
+        ActivityIndicator.self.isHidden = false
+        getRequest(pageID: pageID)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Characters"
         
         tableView.register(UINib(nibName: "PeopleTableViewCell", bundle: nil), forCellReuseIdentifier: "PeopleTableViewCell")
+        
         getRequest(pageID: 1)
     }
     
@@ -32,6 +77,12 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                     guard let decodedData = try? JSONDecoder().decode(PeopleList.self, from: data) else { return }
                     self.list = decodedData
                     self.tableView.reloadData()
+                    
+                    self.ActivityIndicator.self.isHidden = true
+                    self.PageLabel.self.isHidden = false
+                    self.pageCount = Int(ceil(Double(self.list.count ?? 0) / 10.0))
+                    self.PageLabel.text = "Page \(pageID) of \(self.pageCount)"
+                    self.unhideButtons()
                 case .failure(let error):
                     print(error)
                 }

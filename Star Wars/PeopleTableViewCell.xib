@@ -13,7 +13,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="PeopleTableViewCell" customModule="Star_Wars" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -32,10 +32,10 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="wr8-cu-epg" firstAttribute="top" secondItem="GSv-6h-C6m" secondAttribute="bottom" constant="5" id="Dws-FS-qYi"/>
+                    <constraint firstAttribute="bottom" secondItem="wr8-cu-epg" secondAttribute="bottom" constant="12" id="MwN-rk-LPO"/>
                     <constraint firstItem="wr8-cu-epg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="eVk-FY-hWQ"/>
                     <constraint firstItem="GSv-6h-C6m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="gZm-Iu-BQy"/>
                     <constraint firstItem="GSv-6h-C6m" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="raN-L6-Mc7"/>
-                    <constraint firstAttribute="bottom" secondItem="wr8-cu-epg" secondAttribute="bottom" constant="16" id="tyj-tt-mSB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
