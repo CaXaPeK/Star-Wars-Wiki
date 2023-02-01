@@ -6,36 +6,49 @@
 //
 
 import UIKit
+import Alamofire
 
 class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        var content = cell.defaultContentConfiguration()
-        content.text =
-        return cell
-    }
+    @IBOutlet weak var tableView: UITableView!
+    private var list: PeopleList = defaultPeopleList
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Characters"
-        // Do any additional setup after loading the view.
+        
+        tableView.register(UINib(nibName: "PeopleTableViewCell", bundle: nil), forCellReuseIdentifier: "PeopleTableViewCell")
+        getRequest(pageID: 1)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getRequest(pageID: Int) {
+        guard let url = URL(string: "https://swapi.dev/api/people/?page=\(pageID)&format=json") else { return }
+        
+        AF.request(url, method: .get)
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    guard let decodedData = try? JSONDecoder().decode(PeopleList.self, from: data) else { return }
+                    self.list = decodedData
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.results?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleTableViewCell", for: indexPath) as? PeopleTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: list.results?[indexPath.row] ?? defaultPerson)
+        
+        return cell
+    }
 
 }

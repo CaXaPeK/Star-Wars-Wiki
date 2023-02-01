@@ -9,7 +9,7 @@ struct StarshipList {
     let count: Int?
     let next: String?
     let previous: String?
-    let starship: [Starship]?
+    let results: [Starship]?
 }
 
 struct Starship {

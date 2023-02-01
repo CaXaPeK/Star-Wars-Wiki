@@ -9,7 +9,7 @@ struct SpecieList: Codable {
     let count: Int?
     let next: String?
     let previous: String?
-    let specie: [Specie]?
+    let results: [Specie]?
 }
 
 struct Specie: Codable {

@@ -14,10 +14,14 @@ struct PeopleList: Codable {
 
 struct Person: Codable {
     let name, height, mass, hairColor: String?
-    let skinColor, eyeColor, birthYear: String?
+    let skinColor, eyeColor, birth_year: String?
     let gender: String?
     let homeworld: String?
     let films, species, vehicles, starships: [String]?
     let created, edited: String?
     let url: String?
 }
+
+let defaultPerson = Person(name: "Loading...", height: "Loading...", mass: "Loading...", hairColor: "Loading...", skinColor: "Loading...", eyeColor: "Loading...", birth_year: "Loading...", gender: "Loading...", homeworld: "Loading...", films: [], species: [], vehicles: [], starships: [], created: "Loading...", edited: "Loading...", url: "Loading...")
+
+let defaultPeopleList = PeopleList(count: 0, next: "Loading...", previous: "Loading...", results: [])

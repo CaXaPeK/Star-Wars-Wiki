@@ -9,7 +9,7 @@ struct VehicleList {
     let count: Int?
     let next: String?
     let previous: String?
-    let vehicle: [Vehicle]?
+    let results: [Vehicle]?
 }
 
 struct Vehicle {
