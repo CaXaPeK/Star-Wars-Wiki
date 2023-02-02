@@ -15,9 +15,12 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var NextButton: UIButton!
     @IBOutlet weak var PageLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     private var list: PeopleList = defaultPeopleList
     private var pageID = 1
     private var pageCount = 0
+    private var selectedItemTitle = ""
+    private var selectedItemId = 0
     
     func unhideButtons() {
         if pageID == pageCount {
@@ -60,6 +63,7 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Characters"
+        tableView.layer.cornerRadius = tableView.bounds.height / 32
         
         tableView.register(UINib(nibName: "PeopleTableViewCell", bundle: nil), forCellReuseIdentifier: "PeopleTableViewCell")
         
@@ -89,27 +93,6 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             }
     }
     
-    func getImage(id: Int) -> UIImageView {
-        guard let url = URL(string: "https://starwars-visualguide.com/assets/img/characters/\(id).jpg") else { return UIImageView() }
-        var imageView: UIImageView = UIImageView()
-        
-        AF.request(url, method: .get)
-            .validate()
-            .responseData { response in
-                switch response.result {
-                case .success(let data):
-                    imageView.image = UIImage(data: data) ?? UIImage()
-                    print(id)
-                    print(imageView.image)
-                case .failure(let error):
-                    print(error)
-                    print(url)
-                }
-            }
-        
-        return imageView
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.results?.count ?? 0
     }
@@ -122,6 +105,20 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.configure(with: list.results?[indexPath.row] ?? defaultPerson, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedItemTitle = list.results?[indexPath.row].name ?? "Character"
+        selectedItemId = (indexPath.row + 10 * (pageID - 1)) + 1
+        performSegue(withIdentifier: "CharacterSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CharacterSegue" {
+            let destinationVC = segue.destination as? CharacterVC
+            destinationVC?.title = selectedItemTitle
+            destinationVC?.id = selectedItemId
+        }
     }
 
 }

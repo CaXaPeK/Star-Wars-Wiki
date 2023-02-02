@@ -14,8 +14,6 @@ class CategorySelectVC: UIViewController {
     @IBOutlet weak var CharacterButton: UIImageView!
     @IBOutlet weak var FilmsButton: UIImageView!
     @IBOutlet weak var PlanetsButton: UIImageView!
-    @IBOutlet weak var SpeciesButton: UIImageView!
-    @IBOutlet weak var StarshipsButton: UIImageView!
     @IBOutlet weak var VehiclesButton: UIImageView!
     
     override func viewDidLoad() {
@@ -25,8 +23,6 @@ class CategorySelectVC: UIViewController {
         CharacterButton.layer.cornerRadius = CharacterButton.bounds.height / 8
         FilmsButton.layer.cornerRadius = FilmsButton.bounds.height / 8
         PlanetsButton.layer.cornerRadius = PlanetsButton.bounds.height / 8
-        SpeciesButton.layer.cornerRadius = SpeciesButton.bounds.height / 8
-        StarshipsButton.layer.cornerRadius = StarshipsButton.bounds.height / 8
         VehiclesButton.layer.cornerRadius = VehiclesButton.bounds.height / 8
     }
     

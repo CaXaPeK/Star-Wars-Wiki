@@ -27,7 +27,6 @@ class PeopleTableViewCell: UITableViewCell {
     
     func loadImage(id: Int) {
         guard let url = URL(string: "https://starwars-visualguide.com/assets/img/characters/\(id).jpg") else { return }
-        var imageView: UIImageView = UIImageView()
         
         AF.request(url, method: .get)
             .validate()
@@ -44,7 +43,7 @@ class PeopleTableViewCell: UITableViewCell {
     
     func configure(with model: Person, imageID: Int) {
         PersonNameLabel.text = model.name
-        PersonBirthYearLabel.text = "Born: \(model.birth_year ?? "unknown")"
+        PersonBirthYearLabel.text = "Born: \(model.birth_year ?? "Unknown")"
         loadImage(id: imageID)
     }
 }
