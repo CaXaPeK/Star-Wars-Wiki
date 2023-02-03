@@ -22,6 +22,9 @@
 		847A4959298975C5008F7BEB /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A4958298975C5008F7BEB /* Vehicles.swift */; };
 		848DB1BE298A9F010058FC6B /* FilmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DB1BC298A9F010058FC6B /* FilmsTableViewCell.swift */; };
 		848DB1BF298A9F010058FC6B /* FilmsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848DB1BD298A9F010058FC6B /* FilmsTableViewCell.xib */; };
+		84E21B36298D3D5A007F75F2 /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E21B34298D3D5A007F75F2 /* PlanetTableViewCell.swift */; };
+		84E21B37298D3D5A007F75F2 /* PlanetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E21B35298D3D5A007F75F2 /* PlanetTableViewCell.xib */; };
+		84E21B39298D3F9A007F75F2 /* PlanetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E21B38298D3F9A007F75F2 /* PlanetVC.swift */; };
 		84F859AE29864E1D00F63C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F859AD29864E1D00F63C09 /* AppDelegate.swift */; };
 		84F859B029864E1D00F63C09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F859AF29864E1D00F63C09 /* SceneDelegate.swift */; };
 		84F859B229864E1D00F63C09 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F859B129864E1D00F63C09 /* MainVC.swift */; };
@@ -66,6 +69,9 @@
 		847A4958298975C5008F7BEB /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 		848DB1BC298A9F010058FC6B /* FilmsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsTableViewCell.swift; sourceTree = "<group>"; };
 		848DB1BD298A9F010058FC6B /* FilmsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmsTableViewCell.xib; sourceTree = "<group>"; };
+		84E21B34298D3D5A007F75F2 /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
+		84E21B35298D3D5A007F75F2 /* PlanetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetTableViewCell.xib; sourceTree = "<group>"; };
+		84E21B38298D3F9A007F75F2 /* PlanetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetVC.swift; sourceTree = "<group>"; };
 		84F859AA29864E1D00F63C09 /* Star Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F859AD29864E1D00F63C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F859AF29864E1D00F63C09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 				84532E7A2987A5EF002791B7 /* CharacterListVC.swift */,
 				8428559E298AC89D00E3E51D /* CharacterVC.swift */,
 				84352FFB298D0CC900C04B7D /* FilmVC.swift */,
+				84E21B38298D3F9A007F75F2 /* PlanetVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +163,8 @@
 				846FC566298A3A3E00EE629A /* PeopleTableViewCell.xib */,
 				848DB1BC298A9F010058FC6B /* FilmsTableViewCell.swift */,
 				848DB1BD298A9F010058FC6B /* FilmsTableViewCell.xib */,
+				84E21B34298D3D5A007F75F2 /* PlanetTableViewCell.swift */,
+				84E21B35298D3D5A007F75F2 /* PlanetTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -323,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F859BA29864E1F00F63C09 /* LaunchScreen.storyboard in Resources */,
+				84E21B37298D3D5A007F75F2 /* PlanetTableViewCell.xib in Resources */,
 				84F859B729864E1F00F63C09 /* Assets.xcassets in Resources */,
 				848DB1BF298A9F010058FC6B /* FilmsTableViewCell.xib in Resources */,
 				84F859B529864E1D00F63C09 /* Main.storyboard in Resources */,
@@ -362,10 +372,12 @@
 				84F859B229864E1D00F63C09 /* MainVC.swift in Sources */,
 				84F859AE29864E1D00F63C09 /* AppDelegate.swift in Sources */,
 				84F859B029864E1D00F63C09 /* SceneDelegate.swift in Sources */,
+				84E21B36298D3D5A007F75F2 /* PlanetTableViewCell.swift in Sources */,
 				847A495529896CE9008F7BEB /* Species.swift in Sources */,
 				84352FFC298D0CC900C04B7D /* FilmVC.swift in Sources */,
 				847A4959298975C5008F7BEB /* Vehicles.swift in Sources */,
 				847A495729897599008F7BEB /* Starships.swift in Sources */,
+				84E21B39298D3F9A007F75F2 /* PlanetVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

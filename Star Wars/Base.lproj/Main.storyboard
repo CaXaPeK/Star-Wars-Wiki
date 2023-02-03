@@ -197,7 +197,7 @@
         <scene sceneID="6Gp-AZ-Pu0">
             <objects>
                 <viewController id="SAy-v0-ayK" userLabel="CharacterList" customClass="CharacterListVC" customModule="Star_Wars" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BWQ-FY-g1l">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="BWQ-FY-g1l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -205,7 +205,7 @@
                                 <rect key="frame" x="-3" y="-2" width="419" height="900"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="L36-G8-PR0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="L36-G8-PR0">
                                 <rect key="frame" x="18" y="143" width="374" height="662"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -216,14 +216,14 @@
                                     <outlet property="delegate" destination="SAy-v0-ayK" id="JmA-gb-lwj"/>
                                 </connections>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page ? of ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIF-tG-Jw9">
-                                <rect key="frame" x="163" y="841" width="84" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Page ? of ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIF-tG-Jw9">
+                                <rect key="frame" x="-42" y="841" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-GN-w6J">
-                                <rect key="frame" x="18" y="834" width="55.5" height="34"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-GN-w6J">
+                                <rect key="frame" x="0.0" y="834" width="55.5" height="34"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="arrowshape.backward" catalog="system" title=" ">
@@ -233,11 +233,11 @@
                                     <action selector="PrevPageButtonPress:" destination="SAy-v0-ayK" eventType="touchUpInside" id="rTx-3O-qcd"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0ML-05-fLi">
-                                <rect key="frame" x="195" y="464" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0ML-05-fLi">
+                                <rect key="frame" x="-10" y="464" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juD-dY-bnf">
-                                <rect key="frame" x="338.5" y="833" width="55.5" height="35"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juD-dY-bnf">
+                                <rect key="frame" x="-75.5" y="833" width="55.5" height="35"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="arrowshape.forward" catalog="system" title=" " cornerStyle="medium">
@@ -277,6 +277,7 @@
                         <outlet property="tableView" destination="L36-G8-PR0" id="cHD-jN-00o"/>
                         <segue destination="8p1-Bf-PQq" kind="show" identifier="CharacterSegue" id="xps-zX-Plf"/>
                         <segue destination="e35-54-RZ2" kind="show" identifier="FilmSegue" id="5Js-v4-JFT"/>
+                        <segue destination="RKh-rm-WRg" kind="show" identifier="PlanetSegue" id="qtm-BQ-RBs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13g-3m-Isd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -393,7 +394,7 @@ PersonSkinColor</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="low-angle-shot-mesmerizing-starry-sky" translatesAutoresizingMaskIntoConstraints="NO" id="bs7-rh-VWe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1066"/>
+                                <rect key="frame" x="0.0" y="-1" width="414" height="1066"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YnM-6A-FGx">
@@ -407,7 +408,7 @@ PersonSkinColor</string>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3U-wW-lGR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="927"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" id="M86-64-b4q">
                                                 <rect key="frame" x="16" y="16" width="382" height="309"/>
@@ -466,7 +467,66 @@ PersonSkinColor</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiI-kq-wDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3618.840579710145" y="-103.79464285714285"/>
+            <point key="canvasLocation" x="4265" y="-590"/>
+        </scene>
+        <!--PlanetVC-->
+        <scene sceneID="JvO-i9-bve">
+            <objects>
+                <viewController id="RKh-rm-WRg" customClass="PlanetVC" customModule="Star_Wars" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zuj-VD-woT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1066"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="C37-Ra-QLE">
+                                <rect key="frame" x="197" y="578" width="20" height="20"/>
+                                <color key="color" systemColor="systemYellowColor"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="low-angle-shot-mesmerizing-starry-sky" translatesAutoresizingMaskIntoConstraints="NO" id="RO3-hg-LFP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1236"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PS5-o9-htZ">
+                                <rect key="frame" x="0.0" y="144" width="414" height="922"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWG-pE-2AG">
+                                        <rect key="frame" x="16" y="16" width="382" height="382"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1 2 3 4 5 6 7 8" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE8-Qf-rjl">
+                                        <rect key="frame" x="16" y="414" width="382" height="163"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qE8-Qf-rjl" firstAttribute="leading" secondItem="a6J-zW-dOW" secondAttribute="leading" constant="16" id="Io5-Bw-bsX"/>
+                                    <constraint firstItem="qE8-Qf-rjl" firstAttribute="top" secondItem="aWG-pE-2AG" secondAttribute="bottom" constant="16" id="kBr-Jf-AQI"/>
+                                    <constraint firstItem="a6J-zW-dOW" firstAttribute="trailing" secondItem="qE8-Qf-rjl" secondAttribute="trailing" constant="16" id="nLg-5I-b6R"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="o0F-dl-zIJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="a6J-zW-dOW"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lAR-JN-ZmV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C37-Ra-QLE" firstAttribute="centerX" secondItem="lAR-JN-ZmV" secondAttribute="centerX" id="hTP-mx-jIh"/>
+                            <constraint firstItem="C37-Ra-QLE" firstAttribute="centerY" secondItem="lAR-JN-ZmV" secondAttribute="centerY" id="o3T-QP-rDW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uT8-t3-vrB"/>
+                    <size key="freeformSize" width="414" height="1066"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="C37-Ra-QLE" id="d78-Wp-D0P"/>
+                        <outlet property="avatar" destination="aWG-pE-2AG" id="QIE-BL-f7B"/>
+                        <outlet property="scrollView" destination="PS5-o9-htZ" id="hdf-3S-xqJ"/>
+                        <outlet property="text" destination="qE8-Qf-rjl" id="hjw-3q-lV9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOf-UD-dtC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4907" y="-591"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="systemYellowColor"/>

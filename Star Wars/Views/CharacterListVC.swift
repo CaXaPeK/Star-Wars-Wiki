@@ -82,7 +82,7 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 tableView.register(UINib(nibName: "FilmsTableViewCell", bundle: nil), forCellReuseIdentifier: "FilmsTableViewCell")
             case "planets":
                 title = "Planets"
-                tableView.register(UINib(nibName: "PlanetsTableViewCell", bundle: nil), forCellReuseIdentifier: "PlanetsTableViewCell")
+                tableView.register(UINib(nibName: "PlanetTableViewCell", bundle: nil), forCellReuseIdentifier: "PlanetTableViewCell")
             case "vehicles":
                 title = "Vehicles"
                 tableView.register(UINib(nibName: "VehiclesTableViewCell", bundle: nil), forCellReuseIdentifier: "VehiclesTableViewCell")
@@ -167,12 +167,11 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 cell.configure(with: filmList.results?[indexPath.row] ?? defaultFilm, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
                 return cell
             case "planets":
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetsTableViewCell", for: indexPath) as? PlanetsTableViewCell else {
-//                    return UITableViewCell()
-//                }
-//                cell.configure(with: planetList.results?[indexPath.row] ?? defaultPlanet, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
-//                return cell
-                return UITableViewCell()
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetTableViewCell", for: indexPath) as? PlanetTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.configure(with: planetList.results?[indexPath.row] ?? defaultPlanet, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
+                return cell
             case "vehicles":
 //                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VehiclesTableViewCell", for: indexPath) as? VehiclesTableViewCell else {
 //                    return UITableViewCell()
@@ -219,9 +218,9 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 destinationVC?.title = selectedItemTitle
                 destinationVC?.id = selectedItemId
             case "PlanetSegue":
-//                let destinationVC = segue.destination as? PlanetVC
-//                destinationVC?.title = selectedItemTitle
-//                destinationVC?.id = selectedItemId
+                let destinationVC = segue.destination as? PlanetVC
+                destinationVC?.title = selectedItemTitle
+                destinationVC?.id = selectedItemId
                 return
             case "VehicleSegue":
 //                let destinationVC = segue.destination as? VehicleVC
