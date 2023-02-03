@@ -16,7 +16,7 @@ class FilmVC: UIViewController {
     @IBOutlet weak var filmData: UILabel!
     @IBOutlet weak var filmAvatar: UIImageView!
     
-    var id: Int = 0
+    var id = ""
     var film: Film = defaultFilm
     
     override func viewDidLoad() {

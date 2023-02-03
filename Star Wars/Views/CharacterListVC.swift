@@ -24,7 +24,7 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     private var pageID = 1
     private var pageCount = 0
     private var selectedItemTitle = ""
-    private var selectedItemId = 0
+    private var selectedItemId = ""
     var category = ""
     
     func unhideButtons() {
@@ -158,25 +158,25 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleTableViewCell", for: indexPath) as? PeopleTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.configure(with: peopleList.results?[indexPath.row] ?? defaultPerson, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
+            cell.configure(with: peopleList.results?[indexPath.row] ?? defaultPerson, imageID: getID(url: peopleList.results?[indexPath.row].url ?? ""))
                 return cell
             case "films":
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilmsTableViewCell", for: indexPath) as? FilmsTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.configure(with: filmList.results?[indexPath.row] ?? defaultFilm, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
+                cell.configure(with: filmList.results?[indexPath.row] ?? defaultFilm, imageID: getID(url: filmList.results?[indexPath.row].url ?? ""))
                 return cell
             case "planets":
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlanetTableViewCell", for: indexPath) as? PlanetTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.configure(with: planetList.results?[indexPath.row] ?? defaultPlanet, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
+                cell.configure(with: planetList.results?[indexPath.row] ?? defaultPlanet, imageID: getID(url: planetList.results?[indexPath.row].url ?? ""))
                 return cell
             case "vehicles":
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "VehicleTableViewCell", for: indexPath) as? VehicleTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.configure(with: vehicleList.results?[indexPath.row] ?? defaultVehicle, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
+                cell.configure(with: vehicleList.results?[indexPath.row] ?? defaultVehicle, imageID: getID(url: vehicleList.results?[indexPath.row].url ?? ""))
                 return cell
             default:
                 return UITableViewCell()
@@ -187,19 +187,19 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         switch self.category {
             case "people":
                 selectedItemTitle = peopleList.results?[indexPath.row].name ?? "Character"
-                selectedItemId = (indexPath.row + 10 * (pageID - 1)) + 1
+                selectedItemId = getID(url: peopleList.results?[indexPath.row].url ?? "")
                 performSegue(withIdentifier: "CharacterSegue", sender: self)
             case "films":
                 selectedItemTitle = filmList.results?[indexPath.row].title ?? "Film"
-                selectedItemId = (indexPath.row + 10 * (pageID - 1)) + 1
+                selectedItemId = getID(url: filmList.results?[indexPath.row].url ?? "")
                 performSegue(withIdentifier: "FilmSegue", sender: self)
             case "planets":
                 selectedItemTitle = planetList.results?[indexPath.row].name ?? "Planet"
-                selectedItemId = (indexPath.row + 10 * (pageID - 1)) + 1
+                selectedItemId = getID(url: planetList.results?[indexPath.row].url ?? "")
                 performSegue(withIdentifier: "PlanetSegue", sender: self)
             case "vehicles":
                 selectedItemTitle = vehicleList.results?[indexPath.row].name ?? "Vehicle"
-                selectedItemId = (indexPath.row + 10 * (pageID - 1)) + 1
+                selectedItemId = getID(url: vehicleList.results?[indexPath.row].url ?? "")
                 performSegue(withIdentifier: "VehicleSegue", sender: self)
             default:
                 return
@@ -229,6 +229,10 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             default:
                 return
         }
+    }
+    
+    func getID(url: String) -> String {
+        return URL(string: url)!.pathComponents.last ?? ""
     }
 
 }

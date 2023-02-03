@@ -31,7 +31,7 @@ class CharacterVC: UIViewController {
         }
     }
     
-    var id: Int = 0
+    var id = ""
     var person: Person = defaultPerson
     var planet: Planet = defaultPlanet
     var specie: Specie = defaultSpecie

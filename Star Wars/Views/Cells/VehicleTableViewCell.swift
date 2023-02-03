@@ -24,7 +24,7 @@ class VehicleTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func loadImage(id: Int) {
+    func loadImage(id: String) {
         guard let url = URL(string: "https://starwars-visualguide.com/assets/img/vehicles/\(id).jpg") else { return }
         
         AF.request(url, method: .get)
@@ -40,7 +40,7 @@ class VehicleTableViewCell: UITableViewCell {
             }
     }
     
-    func configure(with model: Vehicle, imageID: Int) {
+    func configure(with model: Vehicle, imageID: String) {
         name.text = model.name
         loadImage(id: imageID)
     }

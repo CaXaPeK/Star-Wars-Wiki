@@ -14,7 +14,7 @@ class VehicleVC: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var avatar: UIImageView!
-    var id: Int = 0
+    var id = ""
     var vehicle: Vehicle = defaultVehicle
 
     override func viewDidLoad() {

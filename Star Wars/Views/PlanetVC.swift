@@ -14,7 +14,7 @@ class PlanetVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var avatar: UIImageView!
-    var id: Int = 0
+    var id = ""
     var planet: Planet = defaultPlanet
     
     override func viewDidLoad() {

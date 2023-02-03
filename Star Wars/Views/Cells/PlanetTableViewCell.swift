@@ -24,7 +24,7 @@ class PlanetTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func loadImage(id: Int) {
+    func loadImage(id: String) {
         guard let url = URL(string: "https://starwars-visualguide.com/assets/img/planets/\(id).jpg") else { return }
         
         AF.request(url, method: .get)
@@ -40,7 +40,7 @@ class PlanetTableViewCell: UITableViewCell {
             }
     }
     
-    func configure(with model: Planet, imageID: Int) {
+    func configure(with model: Planet, imageID: String) {
         name.text = model.name
         loadImage(id: imageID)
     }

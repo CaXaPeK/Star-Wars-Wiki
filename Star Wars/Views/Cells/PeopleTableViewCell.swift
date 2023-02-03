@@ -25,7 +25,7 @@ class PeopleTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func loadImage(id: Int) {
+    func loadImage(id: String) {
         guard let url = URL(string: "https://starwars-visualguide.com/assets/img/characters/\(id).jpg") else { return }
         
         AF.request(url, method: .get)
@@ -41,7 +41,7 @@ class PeopleTableViewCell: UITableViewCell {
             }
     }
     
-    func configure(with model: Person, imageID: Int) {
+    func configure(with model: Person, imageID: String) {
         PersonNameLabel.text = model.name
         PersonBirthYearLabel.text = "Born: \(model.birth_year ?? "Unknown")"
         loadImage(id: imageID)
