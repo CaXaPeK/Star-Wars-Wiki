@@ -10,6 +10,7 @@ import Alamofire
 
 class CharacterVC: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var personHomeworld: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var personRace: UILabel!
@@ -45,7 +46,7 @@ class CharacterVC: UIViewController {
                     self.personDetails.text = "Born: \(self.person.birth_year ?? "Unknown")\nWeight: \(self.person.mass ?? "Unknown") kg\nGender: \(self.person.gender?.capitalized ?? "Unknown")\nHair color: \(self.person.hair_color?.capitalized ?? "Unknown")\nSkin color: \(self.person.skin_color?.capitalized ?? "Unknown")"
                     self.scrollView.isHidden = false
                     self.loadPlanetName()
-//                    self.ActivityIndicator.self.isHidden = true
+                    self.activityIndicator.self.isHidden = true
                 case .failure(let error):
                     print(error)
                 }

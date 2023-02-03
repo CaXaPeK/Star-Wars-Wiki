@@ -5,14 +5,14 @@
 
 import Foundation
 
-struct StarshipList {
+struct StarshipList: Codable {
     let count: Int?
     let next: String?
     let previous: String?
     let results: [Starship]?
 }
 
-struct Starship {
+struct Starship: Codable {
     let name, model, manufacturer, cost_in_credits: String?
     let length, max_atmosphering_speed, crew, passengers: String?
     let cargo_capacity, consumables, hyperdrive_rating, mglt: String?

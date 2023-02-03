@@ -16,6 +16,8 @@ class CategorySelectVC: UIViewController {
     @IBOutlet weak var PlanetsButton: UIImageView!
     @IBOutlet weak var VehiclesButton: UIImageView!
     
+    var selectedCategory = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Select a Category"
@@ -26,8 +28,32 @@ class CategorySelectVC: UIViewController {
         VehiclesButton.layer.cornerRadius = VehiclesButton.bounds.height / 8
     }
     
-   
+    @IBAction func charactersPressed(_ sender: UITapGestureRecognizer) {
+        selectedCategory = "people"
+        performSegue(withIdentifier: "ListSegue", sender: self)
+    }
     
+    @IBAction func filmsPressed(_ sender: UITapGestureRecognizer) {
+        selectedCategory = "films"
+        performSegue(withIdentifier: "ListSegue", sender: self)
+    }
+    
+    @IBAction func planetsPressed(_ sender: UITapGestureRecognizer) {
+        selectedCategory = "planets"
+        performSegue(withIdentifier: "ListSegue", sender: self)
+    }
+    
+    @IBAction func vehiclesPressed(_ sender: UITapGestureRecognizer) {
+        selectedCategory = "vehicles"
+        performSegue(withIdentifier: "ListSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ListSegue" {
+            let destinationVC = segue.destination as? CharacterListVC
+            destinationVC?.category = selectedCategory
+        }
+    }
     
     /*
     // MARK: - Navigation

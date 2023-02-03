@@ -5,14 +5,14 @@
 
 import Foundation
 
-struct VehicleList {
+struct VehicleList: Codable {
     let count: Int?
     let next: String?
     let previous: String?
     let results: [Vehicle]?
 }
 
-struct Vehicle {
+struct Vehicle: Codable {
     let name, model, manufacturer, cost_in_credits: String?
     let length, max_atmosphering_speed, crew, passengers: String?
     let cargo_capacity, consumables, vehicle_class: String?
@@ -22,3 +22,5 @@ struct Vehicle {
 }
 
 let defaultVehicle = Vehicle(name: nil, model: nil, manufacturer: nil, cost_in_credits: nil, length: nil, max_atmosphering_speed: nil, crew: nil, passengers: nil, cargo_capacity: nil, consumables: nil, vehicle_class: nil, pilots: nil, films: nil, created: nil, edited: nil, url: nil)
+
+let defaultVehicleList = VehicleList(count: nil, next: nil, previous: nil, results: nil)
