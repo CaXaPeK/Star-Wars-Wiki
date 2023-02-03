@@ -25,6 +25,7 @@ class PlanetTableViewCell: UITableViewCell {
     }
     
     func loadImage(id: String) {
+        avatar.image = UIImage()
         guard let url = URL(string: "https://starwars-visualguide.com/assets/img/planets/\(id).jpg") else { return }
         
         AF.request(url, method: .get)

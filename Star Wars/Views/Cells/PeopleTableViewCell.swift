@@ -26,6 +26,7 @@ class PeopleTableViewCell: UITableViewCell {
     }
     
     func loadImage(id: String) {
+        CellAvatar.image = UIImage()
         guard let url = URL(string: "https://starwars-visualguide.com/assets/img/characters/\(id).jpg") else { return }
         
         AF.request(url, method: .get)

@@ -116,8 +116,8 @@
                                     <outletCollection property="gestureRecognizers" destination="QdE-64-BrT" appends="YES" id="tVZ-WI-KNq"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Starships &amp; Vehicles" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTs-3B-Db0">
-                                <rect key="frame" x="236" y="569" width="128" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vehicles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTs-3B-Db0">
+                                <rect key="frame" x="236" y="569" width="128" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
@@ -489,14 +489,14 @@ PersonSkinColor</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1066"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="C37-Ra-QLE">
-                                <rect key="frame" x="197" y="578" width="20" height="20"/>
-                                <color key="color" systemColor="systemYellowColor"/>
-                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="low-angle-shot-mesmerizing-starry-sky" translatesAutoresizingMaskIntoConstraints="NO" id="RO3-hg-LFP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1236"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="C37-Ra-QLE">
+                                <rect key="frame" x="197" y="578" width="20" height="20"/>
+                                <color key="color" systemColor="systemYellowColor"/>
+                            </activityIndicatorView>
                             <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PS5-o9-htZ">
                                 <rect key="frame" x="0.0" y="144" width="414" height="922"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -504,7 +504,7 @@ PersonSkinColor</string>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWG-pE-2AG">
                                         <rect key="frame" x="16" y="16" width="382" height="382"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1 2 3 4 5 6 7 8" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE8-Qf-rjl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1 2 3 4 5 6 7 8 9 10 11 12" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE8-Qf-rjl">
                                         <rect key="frame" x="16" y="414" width="382" height="163"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemYellowColor"/>
@@ -566,8 +566,8 @@ PersonSkinColor</string>
                                             <constraint firstAttribute="width" secondItem="RqJ-IG-sbH" secondAttribute="height" multiplier="1:1" id="Rrz-kX-mfd"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 2 3 4 5 6 7 8 9" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdR-ex-TZZ">
-                                        <rect key="frame" x="16" y="414" width="382" height="183"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 2 3 4 5 6 7 8 9 10 11 12" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdR-ex-TZZ">
+                                        <rect key="frame" x="16" y="414" width="382" height="243.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemYellowColor"/>
                                         <nil key="highlightedColor"/>

@@ -25,6 +25,7 @@ class VehicleTableViewCell: UITableViewCell {
     }
     
     func loadImage(id: String) {
+        avatar.image = UIImage()
         guard let url = URL(string: "https://starwars-visualguide.com/assets/img/vehicles/\(id).jpg") else { return }
         
         AF.request(url, method: .get)
