@@ -85,7 +85,7 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 tableView.register(UINib(nibName: "PlanetTableViewCell", bundle: nil), forCellReuseIdentifier: "PlanetTableViewCell")
             case "vehicles":
                 title = "Vehicles"
-                tableView.register(UINib(nibName: "VehiclesTableViewCell", bundle: nil), forCellReuseIdentifier: "VehiclesTableViewCell")
+                tableView.register(UINib(nibName: "VehicleTableViewCell", bundle: nil), forCellReuseIdentifier: "VehicleTableViewCell")
             default:
                 title = "List"
             tableView.register(UINib(nibName: "PeopleTableViewCell", bundle: nil), forCellReuseIdentifier: "PeopleTableViewCell")
@@ -173,12 +173,11 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 cell.configure(with: planetList.results?[indexPath.row] ?? defaultPlanet, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
                 return cell
             case "vehicles":
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VehiclesTableViewCell", for: indexPath) as? VehiclesTableViewCell else {
-//                    return UITableViewCell()
-//                }
-//                cell.configure(with: vehicleList.results?[indexPath.row] ?? defaultVehicle, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
-//                return cell
-                return UITableViewCell()
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VehicleTableViewCell", for: indexPath) as? VehicleTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.configure(with: vehicleList.results?[indexPath.row] ?? defaultVehicle, imageID: (indexPath.row + 10 * (self.pageID - 1)) + 1)
+                return cell
             default:
                 return UITableViewCell()
         }
@@ -223,9 +222,9 @@ class CharacterListVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 destinationVC?.id = selectedItemId
                 return
             case "VehicleSegue":
-//                let destinationVC = segue.destination as? VehicleVC
-//                destinationVC?.title = selectedItemTitle
-//                destinationVC?.id = selectedItemId
+                let destinationVC = segue.destination as? VehicleVC
+                destinationVC?.title = selectedItemTitle
+                destinationVC?.id = selectedItemId
                 return
             default:
                 return
